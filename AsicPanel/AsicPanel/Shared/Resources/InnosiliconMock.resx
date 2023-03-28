@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="mockDev" xml:space="preserve">
+    <value>{
+            "ASC": 0,
+            "Name": "DT1",
+            "ID": 0,
+            "Enabled": "Y",
+            "Status": "Alive",
+            "Temperature": 62,
+            "MHS av": 2706206.95,
+            "MHS 5s": 7647214.06,
+            "MHS 1m": 4701833.4,
+            "MHS 5m": 1422247.98,
+            "MHS 15m": 511789.29,
+            "Accepted": 9,
+            "Rejected": 0,
+            "Hardware Errors": 1627,
+            "Utility": 3.05,
+            "Last Share Pool": 0,
+            "Last Share Time": 1678461263,
+            "Total MH": 478974604,
+            "Diff1 Work": 111680,
+            "Difficulty Accepted": 106496,
+            "Difficulty Rejected": 0,
+            "Last Share Difficulty": 8192,
+            "Last Valid Work": 1678461267,
+            "Device Hardware%": 1.4359,
+            "Device Rejected%": 0,
+            "Device Elapsed": 177,
+            "Sync Power": true,
+            "Vendor": "hyt",
+            "Power Vendor": "GP",
+            "Power Version": "7.69",
+            "Tune hash": 0,
+            "Chain ID": 0,
+            "vidOptimal": false,
+            "chkVoltFlag": false,
+            "bistTuneDone": false,
+            "voltBalDone": false,
+            "pllRefineDone": false,
+            "Hash Rate": 7.64721406,
+            "Unit": "TH/s",
+            "Hash Rate H": 7647214060000
+        }</value>
+  </data>
+  <data name="mockSummary" xml:space="preserve">
+    <value>{
+    "success": true,
+    "DEVS": [
+        {
+            "ASC": 0,
+            "Name": "DT1",
+            "ID": 0,
+            "Enabled": "Y",
+            "Status": "Alive",
+            "Temperature": 62,
+            "MHS av": 2706206.95,
+            "MHS 5s": 7647214.06,
+            "MHS 1m": 4701833.4,
+            "MHS 5m": 1422247.98,
+            "MHS 15m": 511789.29,
+            "Accepted": 9,
+            "Rejected": 0,
+            "Hardware Errors": 1627,
+            "Utility": 3.05,
+            "Last Share Pool": 0,
+            "Last Share Time": 1678461263,
+            "Total MH": 478974604,
+            "Diff1 Work": 111680,
+            "Difficulty Accepted": 106496,
+            "Difficulty Rejected": 0,
+            "Last Share Difficulty": 8192,
+            "Last Valid Work": 1678461267,
+            "Device Hardware%": 1.4359,
+            "Device Rejected%": 0,
+            "Device Elapsed": 177,
+            "Sync Power": true,
+            "Vendor": "hyt",
+            "Power Vendor": "GP",
+            "Power Version": "7.69",
+            "Tune hash": 0,
+            "Chain ID": 0,
+            "vidOptimal": false,
+            "chkVoltFlag": false,
+            "bistTuneDone": false,
+            "voltBalDone": false,
+            "pllRefineDone": false,
+            "Hash Rate": 7.64721406,
+            "Unit": "TH/s",
+            "Hash Rate H": 7647214060000
+        },
+        {
+            "ASC": 2,
+            "Name": "DT1",
+            "ID": 2,
+            "Enabled": "Y",
+            "Status": "Alive",
+            "Temperature": 62,
+            "MHS av": 2640395.36,
+            "MHS 5s": 7731286.9,
+            "MHS 1m": 4637910.77,
+            "MHS 5m": 1386241.66,
+            "MHS 15m": 497779.49,
+            "Accepted": 6,
+            "Rejected": 0,
+            "Hardware Errors": 509,
+            "Utility": 2.04,
+            "Last Share Pool": 0,
+            "Last Share Time": 1678461265,
+            "Total MH": 465368145,
+            "Diff1 Work": 108416,
+            "Difficulty Accepted": 81920,
+            "Difficulty Rejected": 0,
+            "Last Share Difficulty": 8192,
+            "Last Valid Work": 1678461267,
+            "Device Hardware%": 0.4673,
+            "Device Rejected%": 0,
+            "Device Elapsed": 176,
+            "Sync Power": true,
+            "Vendor": "hyt",
+            "Power Vendor": "GP",
+            "Power Version": "7.69",
+            "Tune hash": 0,
+            "Chain ID": 2,
+            "vidOptimal": false,
+            "chkVoltFlag": false,
+            "bistTuneDone": false,
+            "voltBalDone": false,
+            "pllRefineDone": false,
+            "Hash Rate": 7.7312869,
+            "Unit": "TH/s",
+            "Hash Rate H": 7731286900000
+        }
+    ],
+    "POOLS": [
+        {
+            "POOL": 0,
+            "URL": "stratum+tcp://gate.emcd.io:3333",
+            "Status": "Alive",
+            "Priority": 0,
+            "Quota": 1,
+            "Long Poll": "N",
+            "Getworks": 27,
+            "Accepted": 15,
+            "Rejected": 0,
+            "Works": 4202,
+            "Discarded": 36,
+            "Stale": 0,
+            "Get Failures": 0,
+            "Remote Failures": 0,
+            "User": "davidmkh64.worker",
+            "Last Share Time": 1678461265,
+            "Diff1 Shares": 220096,
+            "Proxy Type": "",
+            "Proxy": "",
+            "Difficulty Accepted": 188416,
+            "Difficulty Rejected": 0,
+            "Difficulty Stale": 0,
+            "Last Share Difficulty": 8192,
+            "Work Difficulty": 8192,
+            "Has Stratum": true,
+            "Stratum Active": true,
+            "Stratum URL": "gate.emcd.io",
+            "Stratum Difficulty": 8192,
+            "Has Vmask": true,
+            "Has GBT": false,
+            "Best Share": 384088,
+            "Pool Rejected%": 0,
+            "Pool Stale%": 0,
+            "Bad Work": 2,
+            "Current Block Height": 780154,
+            "Current Block Version": 536870912
+        },
+        {
+            "POOL": 1,
+            "URL": "stratum+tcp://gate.emcd.io:443",
+            "Status": "Alive",
+            "Priority": 1,
+            "Quota": 1,
+            "Long Poll": "N",
+            "Getworks": 1,
+            "Accepted": 0,
+            "Rejected": 0,
+            "Works": 0,
+            "Discarded": 0,
+            "Stale": 0,
+            "Get Failures": 0,
+            "Remote Failures": 0,
+            "User": "davidmkh64.worker",
+            "Last Share Time": 0,
+            "Diff1 Shares": 0,
+            "Proxy Type": "",
+            "Proxy": "",
+            "Difficulty Accepted": 0,
+            "Difficulty Rejected": 0,
+            "Difficulty Stale": 0,
+            "Last Share Difficulty": 0,
+            "Work Difficulty": 16384,
+            "Has Stratum": true,
+            "Stratum Active": false,
+            "Stratum URL": "",
+            "Stratum Difficulty": 0,
+            "Has Vmask": true,
+            "Has GBT": false,
+            "Best Share": 0,
+            "Pool Rejected%": 0,
+            "Pool Stale%": 0,
+            "Bad Work": 0,
+            "Current Block Height": 780152,
+            "Current Block Version": 536870912
+        },
+        {
+            "POOL": 2,
+            "URL": "stratum+tcp://btc.viabtc.io:25",
+            "Status": "Alive",
+            "Priority": 2,
+            "Quota": 1,
+            "Long Poll": "N",
+            "Getworks": 1,
+            "Accepted": 0,
+            "Rejected": 0,
+            "Works": 0,
+            "Discarded": 0,
+            "Stale": 0,
+            "Get Failures": 0,
+            "Remote Failures": 0,
+            "User": "davidmkh64.worker",
+            "Last Share Time": 0,
+            "Diff1 Shares": 0,
+            "Proxy Type": "",
+            "Proxy": "",
+            "Difficulty Accepted": 0,
+            "Difficulty Rejected": 0,
+            "Difficulty Stale": 0,
+            "Last Share Difficulty": 0,
+            "Work Difficulty": 65536,
+            "Has Stratum": true,
+            "Stratum Active": false,
+            "Stratum URL": "",
+            "Stratum Difficulty": 0,
+            "Has Vmask": true,
+            "Has GBT": false,
+            "Best Share": 0,
+            "Pool Rejected%": 0,
+            "Pool Stale%": 0,
+            "Bad Work": 0,
+            "Current Block Height": 780152,
+            "Current Block Version": 536870912
+        }
+    ],
+    "HARDWARE": {
+        "Fan duty": 10
+    },
+    "tuning": true,
+    "hashrates": [],
+    "TotalHash": {
+        "Hash Rate": 15.378500960000002,
+        "Unit": "TH/s"
+    }
+}</value>
+  </data>
+</root>

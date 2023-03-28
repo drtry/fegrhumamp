@@ -1,3 +1,4 @@
+using AsicPanel.Shared.Managers;
 using Microsoft.AspNetCore.ResponseCompression;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+builder.Services.AddScoped<ISettingsService, SettingsService>();
+builder.Services.AddScoped<IInnosiliconService, InnosiliconService>();
 
 var app = builder.Build();
 

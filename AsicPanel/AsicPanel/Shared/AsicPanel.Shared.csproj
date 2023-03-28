@@ -9,4 +9,28 @@
   <ItemGroup>
     <SupportedPlatform Include="browser" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\InnosiliconApi.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>InnosiliconApi.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\InnosiliconMock.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>InnosiliconMock.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\InnosiliconApi.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InnosiliconApi.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\InnosiliconMock.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InnosiliconMock.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

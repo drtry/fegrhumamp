@@ -1,6 +1,9 @@
 ﻿@page "/fetchdata"
 @using AsicPanel.Shared
+@using AsicPanel.Shared.Entities
+@using AsicPanel.Shared.Entities.Innosilicon
 @inject HttpClient Http
+@using Microsoft.AspNetCore.Mvc
 
 <PageTitle>Weather forecast</PageTitle>
 
@@ -8,7 +11,7 @@
 
 <p>This component demonstrates fetching data from the server.</p>
 
-@if (forecasts == null)
+@if (devices == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -17,20 +20,22 @@ else
     <table class="table">
         <thead>
             <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
+                <th>Ip</th>
+                <th>Type</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var forecast in forecasts)
+            @foreach (var device in devices.Data.Devices)
             {
                 <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
+                    <td>@device.Ip</td>
+                    <td>@device.Type</td>
+                    <td>
+                        <form method="post" action="@Url.Action("GetFoo", "ControllerName")">
+                            <input type="hidden" name="id" value="@device" />
+                            <button type="submit" class="btn btn-danger btn-sm">Удалить</button>
+                        </form>
+                    </td>
                 </tr>
             }
         </tbody>
@@ -38,10 +43,12 @@ else
 }
 
 @code {
-    private WeatherForecast[]? forecasts;
+    private Result<Settings>? devices;
+    private Task<EmptyResult>? auth;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");
+        devices = await Http.GetFromJsonAsync<Result<Settings>>("Config/Settings");
+        //auth = await Http.Po .GetFromJsonAsync<Task<EmptyResult>>("Device/Auth");
     }
 }

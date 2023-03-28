@@ -1,0 +1,11 @@
+{
+	"Devices":
+	[
+		{
+			"Ip":"http://192.168.0.104",
+			"Username" : "admin",
+			"Password" : "admin",
+			"Type" : "INNOSILICON"
+		}
+	]
+}
