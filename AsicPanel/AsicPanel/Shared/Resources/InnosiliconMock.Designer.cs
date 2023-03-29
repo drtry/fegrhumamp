@@ -62,6 +62,18 @@ namespace AsicPanel.Shared.Resources {
         
         /// <summary>
         ///   Ищет локализованную строку, похожую на {
+        ///&quot;jwt&quot;: &quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBc2ljTWluZXIiLCJpYXQiOjE2NzkyNDAwMDYsImV4cCI6MTY3OTI2MTYwNiwidXNlciI6ImFkbWluIn0.fXwJoRoax14rt8XZw6Y89fixLOomUP-fmcQlwkeqgYI&quot;,
+        ///&quot;success&quot;: true
+        ///}.
+        /// </summary>
+        internal static string mockAuth {
+            get {
+                return ResourceManager.GetString("mockAuth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на {
         ///            &quot;ASC&quot;: 0,
         ///            &quot;Name&quot;: &quot;DT1&quot;,
         ///            &quot;ID&quot;: 0,

@@ -21,7 +21,14 @@ namespace AsicPanel.Server.Controllers
         public Task<EmptyResult> AuthAsync([FromBody]Device device)
         {
             return service.AuthAsync(device);
-            //return service.GetSummary(null);
         }
+
+        [HttpPost("Summary")]
+        public Task<Result<InnosiliconSummaryResult>> GetSummaryDevice(Device device)
+        {
+            return service.GetSummaryDevice(device);
+        }
+
+        //Task<Result<InnosiliconSummary>> GetSummaryDevice(Device device)
     }
 }
