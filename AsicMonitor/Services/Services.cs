@@ -1,5 +1,4 @@
-﻿using BLL.Managers;
-using BLL.Services;
+﻿using BLL.Services;
 
 namespace AsicMonitor.Services
 {

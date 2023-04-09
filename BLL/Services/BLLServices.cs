@@ -1,12 +1,5 @@
-﻿using BLL.Core;
-using BLL.Managers;
-using Microsoft.Extensions.Caching.Memory;
+﻿using BLL.Managers;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL.Services
 {
