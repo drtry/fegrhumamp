@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace BLL.Entities.Innosilicon
+namespace BLL.Entities.Innosilicon.Response
 {
     public class InnosiliconSummaryDevice
     {
@@ -122,6 +122,6 @@ namespace BLL.Entities.Innosilicon
         public string Unit { get; set; }
 
         [JsonPropertyName("Hash Rate H")]
-        public double HashRateH { get; set; }
+        public long HashRateH { get; set; }
     }
 }

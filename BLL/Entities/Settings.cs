@@ -2,7 +2,7 @@
 {
     public class Settings
     {
-        public Device[] Devices { get; set; }
+        public List<Device> Devices { get; set; }
     }
     public class Device
     {

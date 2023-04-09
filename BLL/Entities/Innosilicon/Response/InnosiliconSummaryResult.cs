@@ -1,7 +1,10 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace BLL.Entities.Innosilicon
+namespace BLL.Entities.Innosilicon.Response
 {
+    /// <summary>
+    /// Объект, возвращаемый Innosilicon
+    /// </summary>
     public class InnosiliconSummaryResult : EmptyResult
     {
         [JsonPropertyName("DEVS")]

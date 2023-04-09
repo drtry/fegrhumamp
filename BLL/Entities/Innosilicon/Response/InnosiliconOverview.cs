@@ -1,4 +1,4 @@
-﻿namespace BLL.Entities.Innosilicon
+﻿namespace BLL.Entities.Innosilicon.Response
 {
     public class InnosiliconOverview
     {

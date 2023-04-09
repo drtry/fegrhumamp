@@ -8,8 +8,8 @@ namespace BLL.Services
         public static IServiceCollection AddBLLServices(this IServiceCollection services)
         {
             services.AddMemoryCache();
-            services.AddScoped<IInnosiliconService,InnosiliconService>();
-            services.AddScoped<ISettingsService, SettingsService>();
+            services.AddSingleton<IInnosiliconService,InnosiliconService>();
+            services.AddSingleton<ISettingsService, SettingsService>();
             return services;
         }
     }

@@ -74,32 +74,6 @@ namespace BLL.Resources {
         
         /// <summary>
         ///   Ищет локализованную строку, похожую на {
-        ///            &quot;ASC&quot;: 0,
-        ///            &quot;Name&quot;: &quot;DT1&quot;,
-        ///            &quot;ID&quot;: 0,
-        ///            &quot;Enabled&quot;: &quot;Y&quot;,
-        ///            &quot;Status&quot;: &quot;Alive&quot;,
-        ///            &quot;Temperature&quot;: 62,
-        ///            &quot;MHS av&quot;: 2706206.95,
-        ///            &quot;MHS 5s&quot;: 7647214.06,
-        ///            &quot;MHS 1m&quot;: 4701833.4,
-        ///            &quot;MHS 5m&quot;: 1422247.98,
-        ///            &quot;MHS 15m&quot;: 511789.29,
-        ///            &quot;Accepted&quot;: 9,
-        ///            &quot;Rejected&quot;: 0,
-        ///            &quot;Hardware Errors&quot;: 1627,
-        ///            &quot;Utility&quot;: 3.05,
-        ///            &quot;Last Share Pool&quot;: 0,
-        ///           [остаток строки не уместился]&quot;;.
-        /// </summary>
-        internal static string mockDev {
-            get {
-                return ResourceManager.GetString("mockDev", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на {
         ///    &quot;success&quot;: true,
         ///    &quot;DEVS&quot;: [
         ///        {

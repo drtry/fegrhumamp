@@ -8,12 +8,20 @@ namespace BLL.Managers
 
         private readonly string ConfigPath = "../BLL/config.json";
 
+        private EmulatorStorage _emulatorStorage;
+
+        public SettingsService()
+        {
+            _emulatorStorage = EmulatorStorage.Instance();
+        }
+
         public async Task<Result<Settings>> GetSettingsFromConfigAsync()
         {
             try
             {
                 string json = await File.ReadAllTextAsync(ConfigPath);
-                var config = JsonSerializer.Deserialize<Settings>(json);
+                Settings config = JsonSerializer.Deserialize<Settings>(json);
+                config.Devices.AddRange(_emulatorStorage.GetDevices());
                 return new Result<Settings> { Success = true, Data = config };
             }
             catch (FileNotFoundException ex)

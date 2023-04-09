@@ -123,50 +123,6 @@
 "success": true
 }</value>
   </data>
-  <data name="mockDev" xml:space="preserve">
-    <value>{
-            "ASC": 0,
-            "Name": "DT1",
-            "ID": 0,
-            "Enabled": "Y",
-            "Status": "Alive",
-            "Temperature": 62,
-            "MHS av": 2706206.95,
-            "MHS 5s": 7647214.06,
-            "MHS 1m": 4701833.4,
-            "MHS 5m": 1422247.98,
-            "MHS 15m": 511789.29,
-            "Accepted": 9,
-            "Rejected": 0,
-            "Hardware Errors": 1627,
-            "Utility": 3.05,
-            "Last Share Pool": 0,
-            "Last Share Time": 1678461263,
-            "Total MH": 478974604,
-            "Diff1 Work": 111680,
-            "Difficulty Accepted": 106496,
-            "Difficulty Rejected": 0,
-            "Last Share Difficulty": 8192,
-            "Last Valid Work": 1678461267,
-            "Device Hardware%": 1.4359,
-            "Device Rejected%": 0,
-            "Device Elapsed": 177,
-            "Sync Power": true,
-            "Vendor": "hyt",
-            "Power Vendor": "GP",
-            "Power Version": "7.69",
-            "Tune hash": 0,
-            "Chain ID": 0,
-            "vidOptimal": false,
-            "chkVoltFlag": false,
-            "bistTuneDone": false,
-            "voltBalDone": false,
-            "pllRefineDone": false,
-            "Hash Rate": 7.64721406,
-            "Unit": "TH/s",
-            "Hash Rate H": 7647214060000
-        }</value>
-  </data>
   <data name="mockSummary" xml:space="preserve">
     <value>{
     "success": true,
