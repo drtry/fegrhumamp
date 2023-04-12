@@ -1,5 +1,6 @@
 /AsicMonitor/bin
 /AsicMonitor/obj
+/AsicMonitor/.vs
 /BLL/bin
 /BLL/obj
-/AsicMonitor/.vs
+/build
