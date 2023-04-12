@@ -36,6 +36,7 @@ namespace BLL.Entities.Innosilicon.Emulation
 
         public InnosiliconSummaryResult GetSummary()
         {
+            Thread.Sleep(3000); // эмулируем задержку как при работе с реальным оборудованием
             return new InnosiliconSummaryResult()
             {
                 DEVS = new InnosiliconSummaryDevice[1] {

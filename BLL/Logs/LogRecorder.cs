@@ -1,6 +1,6 @@
 ﻿namespace BLL.Logs
 {
-    internal class LogRecorder
+    public class LogRecorder
     {
         /// <summary>
         /// Получить объект для записи логов
