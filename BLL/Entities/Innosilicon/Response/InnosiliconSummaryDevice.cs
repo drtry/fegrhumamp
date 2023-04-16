@@ -56,7 +56,7 @@ namespace BLL.Entities.Innosilicon.Response
         public int LastShareTime { get; set; }
 
         [JsonPropertyName("Total MH")]
-        public int TotalMH { get; set; }
+        public long TotalMH { get; set; }
 
         [JsonPropertyName("Diff1 Work")]
         public int Diff1Work { get; set; }
@@ -122,6 +122,6 @@ namespace BLL.Entities.Innosilicon.Response
         public string Unit { get; set; }
 
         [JsonPropertyName("Hash Rate H")]
-        public long HashRateH { get; set; }
+        public decimal HashRateH { get; set; }
     }
 }
