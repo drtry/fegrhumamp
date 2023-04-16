@@ -63,6 +63,16 @@ namespace AsicMonitor.Controllers
             return authTask.Result;
         }
 
+        [HttpPost("Reboot")]
+        public async Task<EmptyResult> RebootAsync([FromBody] Device device)
+        {
+            LogRecorder.GetLogRecorder(_logFileName).Write("RebootAsync start");
+            Task<EmptyResult> rebootTask = _innosiliconService.RebootAsync(device);
+            LogRecorder.GetLogRecorder(_logFileName).Write("RebootAsync end");
+            await rebootTask;
+            return rebootTask.Result;
+        }
+
         [HttpPost("Summary")]
         public async Task<Result<InnosiliconSummaryResult>> GetSummaryDevice(Device device)
         {

@@ -36,14 +36,33 @@ namespace BLL.Entities.Innosilicon.Emulation
 
         public InnosiliconSummaryResult GetSummary()
         {
-            Thread.Sleep(3000); // эмулируем задержку как при работе с реальным оборудованием
+            //Thread.Sleep(3000); // эмулируем задержку как при работе с реальным оборудованием
             return new InnosiliconSummaryResult()
             {
-                DEVS = new InnosiliconSummaryDevice[1] {
+                DEVS = new InnosiliconSummaryDevice[] {
                     new InnosiliconSummaryDevice() {
                         Status = "Alive",
                         Temperature = _random.Next(50, 70),
                         HashRate = _random.NextDouble() * (10-5) + 5 // от 5 до 10
+                    },
+                    new InnosiliconSummaryDevice() {
+                        Status = "Alive",
+                        Temperature = _random.Next(50, 70),
+                        HashRate = _random.NextDouble() * (10-5) + 5 // от 5 до 10
+                    }
+                },
+                POOLS = new InnosiliconPool[] { 
+                    new InnosiliconPool() { 
+                        POOL = 0,
+                        URL = string.Format("stratum+tcp://gate.emcd.io:{0}", _random.Next(0,7777)),
+                        Status = "Alive",
+                        User = "davidmkh64.worker"
+                    },
+                    new InnosiliconPool() {
+                        POOL = 1,
+                        URL = string.Format("stratum+tcp://gate.emcd.io:{0}", _random.Next(0,7777)),
+                        Status = "Alive",
+                        User = "davidmkh64.worker"
                     }
                 }
             };

@@ -114,7 +114,7 @@ namespace BLL.Managers
             if (innosiliconEmulator != null)
             {
                 LogRecorder.GetLogRecorder(_logFileName).Write("Auth is emulation device");
-                Thread.Sleep(3000); // эмулируем задержку как при работе с реальным оборудованием
+                //Thread.Sleep(3000); // эмулируем задержку как при работе с реальным оборудованием
                 LogRecorder.GetLogRecorder(_logFileName).Write("Auth set match ip - jwt");
                 _cache.Set(innosiliconEmulator.Ip, innosiliconEmulator.Jwt);
                 LogRecorder.GetLogRecorder(_logFileName).Write("Auth end");
@@ -125,7 +125,6 @@ namespace BLL.Managers
                 LogRecorder.GetLogRecorder(_logFileName).Write("Auth is real device");
                 var client = new HttpClient();
                 var uri = device.Ip + "/" + InnosiliconApi.Auth;
-                //var uri = "http://192.168.0.101/api/auth";
                 var values = new Dictionary<string, string> { { "username", device.Username }, { "password", device.Password } };
 
                 var content = new FormUrlEncodedContent(values);
@@ -135,8 +134,8 @@ namespace BLL.Managers
                 {
                     LogRecorder.GetLogRecorder(_logFileName).Write("Auth send auth request to device start");
                     Task<HttpResponseMessage> postTask = client.PostAsync(uri, content);
-                    postTask.Start();
-                    postTask.Wait();
+                    //postTask.Start();
+                    //postTask.Wait();
                     httpResponseMessage = postTask.Result;
                     LogRecorder.GetLogRecorder(_logFileName).Write("Auth send auth request to device end");
                 }
@@ -154,12 +153,11 @@ namespace BLL.Managers
 
                 LogRecorder.GetLogRecorder(_logFileName).Write("Auth read response start");
                 Task<string> responseReadAsAsyncTask = httpResponseMessage.Content.ReadAsStringAsync();
-                responseReadAsAsyncTask.Start();
-                responseReadAsAsyncTask.Wait();
+                //responseReadAsAsyncTask.Start();
+                //responseReadAsAsyncTask.Wait();
                 var responseString = responseReadAsAsyncTask.Result;
                 LogRecorder.GetLogRecorder(_logFileName).Write("Auth read response end");
 
-                //var responseString = InnosiliconMock.mockAuth;
                 InnosiliconAuthenticationResult res;
                 try
                 {
@@ -179,6 +177,70 @@ namespace BLL.Managers
             }
         }
 
+        private EmptyResult Reboot(Device device)
+        {
+            LogRecorder.GetLogRecorder(_logFileName).Write("Reboot start");
+            InnosiliconEmulator innosiliconEmulator = _emulatorStorage.InnosiliconEmulators.Find(x => x.Ip.Equals(device.Ip));
+            if (innosiliconEmulator != null)
+            {
+                Thread.Sleep(3000); // эмулируем задержку как при работе с реальным оборудованием
+                LogRecorder.GetLogRecorder(_logFileName).Write("Reboot end");
+                return new EmptyResult { Success = true };
+            }
+            else
+            {
+                LogRecorder.GetLogRecorder(_logFileName).Write("Reboot is real device");
+                var client = new HttpClient();
+                var uri = device.Ip + "/" + InnosiliconApi.Reboot;
+                var values = new Dictionary<string, string> {  };
+
+                var content = new FormUrlEncodedContent(values);
+
+                HttpResponseMessage httpResponseMessage;
+                try
+                {
+                    LogRecorder.GetLogRecorder(_logFileName).Write("Reboot send auth request to device start");
+                    Task<HttpResponseMessage> postTask = client.PostAsync(uri, content);
+                    //postTask.Start();
+                    //postTask.Wait();
+                    httpResponseMessage = postTask.Result;
+                    LogRecorder.GetLogRecorder(_logFileName).Write("Reboot send auth request to device end");
+                }
+                catch
+                {
+                    LogRecorder.GetLogRecorder(_logFileName).Write("Reboot send auth request to device error");
+                    return new EmptyResult { Success = false, Message = "Ошибка: не удалось перезагрузить устройство." };
+                }
+
+                if (!httpResponseMessage.IsSuccessStatusCode)
+                {
+                    LogRecorder.GetLogRecorder(_logFileName).Write(string.Format("Auth auth request response error: {0}", httpResponseMessage.ReasonPhrase));
+                    return new EmptyResult { Success = false, Message = httpResponseMessage.ReasonPhrase };
+                }
+
+                LogRecorder.GetLogRecorder(_logFileName).Write("Reboot read response start");
+                Task<string> responseReadAsAsyncTask = httpResponseMessage.Content.ReadAsStringAsync();
+                //responseReadAsAsyncTask.Start();
+                //responseReadAsAsyncTask.Wait();
+                var responseString = responseReadAsAsyncTask.Result;
+                LogRecorder.GetLogRecorder(_logFileName).Write("Reboot read response end");
+
+                EmptyResult res;
+                try
+                {
+                    res = JsonSerializer.Deserialize<EmptyResult>(responseString);
+                }
+                catch
+                {
+                    LogRecorder.GetLogRecorder(_logFileName).Write("Auth response deserialize error");
+                    return new EmptyResult { Success = false, Message = "Ошибка: не удалось десериализовать ответ." };
+                }
+
+                LogRecorder.GetLogRecorder(_logFileName).Write("Reboot end");
+                return new EmptyResult { Success = true };
+            }
+        }
+
         public Task<EmptyResult> AuthAsync(Device device)
         {
             LogRecorder.GetLogRecorder(_logFileName).Write("AuthAsync start");
@@ -186,6 +248,15 @@ namespace BLL.Managers
             authTask.Start();
             LogRecorder.GetLogRecorder(_logFileName).Write("AuthAsync end");
             return authTask;
+        }
+
+        public Task<EmptyResult> RebootAsync(Device device)
+        {
+            LogRecorder.GetLogRecorder(_logFileName).Write("RebootAsync start");
+            Task<EmptyResult> rebootTask = new Task<EmptyResult>(() => { return Reboot(device); });
+            rebootTask.Start();
+            LogRecorder.GetLogRecorder(_logFileName).Write("Reboot end");
+            return rebootTask;
         }
 
         public Result<InnosiliconSummaryResult> GetSummaryDevice(Device device)
@@ -224,8 +295,8 @@ namespace BLL.Managers
                 {
                     LogRecorder.GetLogRecorder(_logFileName).Write("GetSummaryDevice send get summary request to device start");
                     Task<HttpResponseMessage> postTask = client.PostAsync(uri, content);
-                    postTask.Start();
-                    postTask.Wait();
+                    //postTask.Start();
+                    //postTask.Wait();
                     httpResponseMessage = postTask.Result;
                     LogRecorder.GetLogRecorder(_logFileName).Write("GetSummaryDevice send get summary request to device end");
                 }
@@ -243,8 +314,8 @@ namespace BLL.Managers
 
                 LogRecorder.GetLogRecorder(_logFileName).Write("GetSummaryDevice read response start");
                 Task<string> responseReadAsAsyncTask = httpResponseMessage.Content.ReadAsStringAsync();
-                responseReadAsAsyncTask.Start();
-                responseReadAsAsyncTask.Wait();
+                //responseReadAsAsyncTask.Start();
+                //responseReadAsAsyncTask.Wait();
                 var responseString = responseReadAsAsyncTask.Result;
                 LogRecorder.GetLogRecorder(_logFileName).Write("GetSummaryDevice read response end");
 
@@ -279,6 +350,7 @@ namespace BLL.Managers
     {
         public int EmulationDevieCount { get; set; }
         public Task<EmptyResult> AuthAsync(Device device);
+        public Task<EmptyResult> RebootAsync(Device device);
         public Task<Result<InnosiliconSummaryResult>> GetSummaryDeviceAsync(Device device);
     }
 }

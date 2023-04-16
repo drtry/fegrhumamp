@@ -1,7 +1,7 @@
 {
   "Devices": [
     {
-      "Ip": "http://192.168.0.101",
+      "Ip": "http://192.168.0.102",
       "Username": "admin",
       "Password": "admin",
       "Type": "INNOSILICON"

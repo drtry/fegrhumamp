@@ -123,6 +123,9 @@
   <data name="Overview" xml:space="preserve">
     <value>api/overview</value>
   </data>
+  <data name="Reboot" xml:space="preserve">
+    <value>api/reboot</value>
+  </data>
   <data name="Summary" xml:space="preserve">
     <value>api/summary</value>
   </data>

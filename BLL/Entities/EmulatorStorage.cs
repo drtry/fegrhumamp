@@ -47,7 +47,7 @@ namespace BLL.Entities
             List<Device> devices = new List<Device>();
             foreach (InnosiliconEmulator innosiliconEmulator in InnosiliconEmulators)
             {
-                devices.Add(new Device() { Ip = innosiliconEmulator.Ip, Type = innosiliconEmulator.Type });
+                devices.Add(new Device() { Ip = innosiliconEmulator.Ip, Type = innosiliconEmulator.Type, Password = string.Empty, Username = string.Empty });
             }
             return devices;
         }

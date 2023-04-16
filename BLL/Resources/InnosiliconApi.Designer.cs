@@ -79,6 +79,15 @@ namespace BLL.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на api/reboot.
+        /// </summary>
+        internal static string Reboot {
+            get {
+                return ResourceManager.GetString("Reboot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на api/summary.
         /// </summary>
         internal static string Summary {
