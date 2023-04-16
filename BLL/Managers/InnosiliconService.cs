@@ -192,7 +192,7 @@ namespace BLL.Managers
                 LogRecorder.GetLogRecorder(_logFileName).Write("Reboot is real device");
                 var client = new HttpClient();
                 var uri = device.Ip + "/" + InnosiliconApi.Reboot;
-                var values = new Dictionary<string, string> {  };
+                var values = new Dictionary<string, string> { };
 
                 var content = new FormUrlEncodedContent(values);
 
@@ -274,7 +274,7 @@ namespace BLL.Managers
             else
             {
                 var jwt = _cache.Get(device.Ip);
-                if (string.IsNullOrEmpty(jwt.ToString()))
+                if (jwt == null)
                 {
                     LogRecorder.GetLogRecorder(_logFileName).Write("GetSummaryDevice jwt not found");
                     return new Result<InnosiliconSummaryResult> { Success = false, Message = "Ошибка: не удалось получить данные (не удалось получить ключ авторизации)." };

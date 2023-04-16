@@ -35,6 +35,7 @@
 
         private StreamWriter logWriter;
         private string _name;
+        private object _locker;
 
         private LogRecorder(string Name)
         {
@@ -44,6 +45,8 @@
                 Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + Constants.LOGS_DIRECTORY_NAME);
 
             logWriter = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + Constants.LOGS_DIRECTORY_NAME + Constants.BACK_SLASH + Name + Constants.TXT_FILE_EXTENSION);
+
+            _locker = new object();
         }
 
         /// <summary>
@@ -52,8 +55,11 @@
         /// <param name="message">Текст сообщения</param>
         public void Write(string message)
         {
-            logWriter.WriteLine(string.Format("{0:dd.MM.yyyy H:mm:ss.fff}: {1}", DateTime.Now, message));
-            logWriter.Flush();
+            lock (_locker)
+            {
+                logWriter.WriteLine(string.Format("{0:dd.MM.yyyy H:mm:ss.fff}: {1}", DateTime.Now, message));
+                logWriter.Flush();
+            }
         }
 
         /// <summary>

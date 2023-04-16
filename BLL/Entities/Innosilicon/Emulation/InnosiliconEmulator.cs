@@ -4,7 +4,7 @@ namespace BLL.Entities.Innosilicon.Emulation
 {
     internal class InnosiliconEmulator
     {
-        private const string _type = "INNOSILICON";
+        private const string _type = "INNOSILICON_emulator";
 
         private string _jwt;
         public string Jwt
